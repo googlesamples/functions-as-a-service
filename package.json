@@ -1,0 +1,30 @@
+{
+  "name": "@google-cloud/functions-as-a-service",
+  "version": "1.0.0",
+  "description": "A demo showing GMP + GCF.",
+  "scripts": {
+    "build": "tsc --declaration",
+    "watch": "tsc --watch --declaration",
+    "deploy": "cd gcf && npm run deploy",
+    "test": "cd gmp && npm run test",
+    "clean": "find . -name '*.js' -type f -delete"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "sso://devrel/samples/cloud/sushi-as-a-service"
+  },
+  "keywords": [
+    "GCF",
+    "GMP",
+    "functions",
+    "serverless",
+    "maps"
+  ],
+  "author": "Grant Timmerman, Alex Muramoto, Angela Yu",
+  "license": "MIT",
+  "devDependencies": {
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.4"
+  }
+}
