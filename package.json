@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "A demo showing GMP + GCF.",
   "scripts": {
-    "build": "tsc --declaration",
-    "watch": "tsc --watch --declaration",
+    "build": "tsc --watch --declaration",
+    "watch": "npm-watch local",
+    "local": "functions-framework --target=helloWorld",
     "deploy": "cd gcf && npm run deploy",
     "test": "cd gmp && npm run test",
     "clean": "find . -name '*.js' -type f -delete"
@@ -13,6 +14,9 @@
   "repository": {
     "type": "git",
     "url": "sso://devrel/samples/cloud/sushi-as-a-service"
+  },
+  "watch": {
+    "local": "*.js"
   },
   "keywords": [
     "GCF",
@@ -24,7 +28,14 @@
   "author": "Grant Timmerman, Alex Muramoto, Angela Yu",
   "license": "MIT",
   "devDependencies": {
+    "@google-cloud/functions-framework": "^1.1.0",
+    "npm-watch": "^0.6.0",
     "tslint": "^5.16.0",
     "typescript": "^3.4.4"
+  },
+  "dependencies": {
+    "@google/maps": "^0.5.5",
+    "@types/express": "^4.16.1",
+    "@types/google__maps": "^0.5.5"
   }
 }

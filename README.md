@@ -2,35 +2,33 @@
 
 ![](https://user-images.githubusercontent.com/744973/56170578-e5675b80-5f96-11e9-9ffe-9492512a0586.png)
 
-Functions as a Service is a demo for Google I/O '19.
-
 The demo shows calling Google Maps Platform APIs from Google Cloud Functions.
-
-We show functions firing to query photos, details, and directions to sushi restaurants within 25 miles of Google I/O.
 
 ## Technologies
 
-### Google Cloud Functions
-
 - Cloud Functions (Node 10)
-
-### Google Maps Platform
-
-- Place Details API
-- Places Photos API
-- Street View Static API
-- Call Routes API
+- TypeScript:
+  - Google Maps Client: https://www.npmjs.com/package/@types/google__maps
+- [Node.js Client for Google Maps Services](https://github.com/googlemaps/google-maps-services-js)
+  - Place Details API
+  - Places Photos API
+  - Call Routes API
 
 ## Develop
 
-This project has two sub-projects, `gcf` and `gmp`.
+First install dependencies:
 
-- `gcf/` holds Google Cloud Functions logic.
-  - `cd` into this directory and run `deploy.sh` to deploy.
-- `gmp/` holds Google Maps Platform logic.
-  - Publish to npm to expose this module to `gcf/`.
+```sh
+npm i
+```
 
-To build the project, in the parent directory, run this command:
+Then in one tab continually build the project with this command:
+
+```sh
+npm run build
+```
+
+In another tab, start the web server (and watch if the source code changes):
 
 ```sh
 npm run watch
