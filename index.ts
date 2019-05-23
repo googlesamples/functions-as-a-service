@@ -2,6 +2,7 @@ import {Request, Response} from 'express';
 
 import directions from './src/directions';
 import origins from './src/origins';
+import places from './src/places';
 
 /**
  * Entry point into the Functions Framework.
@@ -11,6 +12,7 @@ exports.function = (req: Request, res: Response) => {
   const paths = {
     '/directions': directions,
     '/origins': origins,
+    '/places': places,
     // Default route (at the end)
     '/': () => res.send(Object.keys(paths)),
   };
