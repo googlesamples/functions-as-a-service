@@ -9,9 +9,7 @@ The demo shows calling Google Maps Platform APIs from Google Cloud Functions.
 - Cloud Functions (Node 10)
   - [Function Framework](https://github.com/GoogleCloudPlatform/functions-framework-nodejs) for local development.
 - Google Maps Services ([Node.js Client](https://github.com/googlemaps/google-maps-services-js))
-  - Place Details API
-  - Places Photos API
-  - Call Routes API
+  - Directions API
 - TypeScript
   - Google Maps Types: https://www.npmjs.com/package/@types/google__maps
   - Google Cloud Functions Server (Express): https://www.npmjs.com/package/@types/express
@@ -35,6 +33,24 @@ In another tab, start the web server (and watch if the source code changes):
 ```sh
 npm run watch
 ```
+
+In order to use some methods, you'll need to start the server with an API key.
+
+```sh
+API_KEY=<KEY> npm run watch
+```
+
+### API Key
+
+To create an API key, use the Cloud Console credentials page:
+
+https://console.cloud.google.com/apis/credentials
+
+More detailed instructions can be found in the ["Get API Key" guide](https://developers.google.com/maps/documentation/javascript/get-api-key#detailed_guide).
+
+After creating an API key, enable these APIs:
+
+- [Directions API](http://console.cloud.google.com/google/maps-apis/apis/directions-backend.googleapis.com)
 
 ### Test
 

@@ -8,7 +8,7 @@ export default (req: Request, res: Response) => {
   // Validate query parameter.
   const origin = req.query.origin;
   if (!origin) {
-    return res.send({
+    return res.status(400).send({
       error: 'Error: `origin` query parameter required. Example: /origins?origin=1',
     });
   }
@@ -29,7 +29,9 @@ export default (req: Request, res: Response) => {
     const place = places[+origin];
 
     // Validate place
-    if (!place) return res.send('Error: Invalid `origin` query parameter. Example: /origins?origin=1');
+    if (!place) {
+      return res.status(400).send('Error: Invalid `origin` query parameter. Example: /origins?origin=1');
+    }
 
     // Randomize the dot's location a bit
     const RANDOMNESS = 0.025;
