@@ -1,7 +1,7 @@
 import {Request, Response} from 'express';
 
-import route1 from './src/route1';
-import route2 from './src/route2';
+import directions from './src/directions';
+import origins from './src/origins';
 
 /**
  * Entry point into the Functions Framework.
@@ -9,8 +9,10 @@ import route2 from './src/route2';
  */
 exports.function = (req: Request, res: Response) => {
   const paths = {
-    '/foo': route1,
-    '/bar': route2,
+    '/directions': directions,
+    '/origins': origins,
+    // Default route (at the end)
+    '/': () => res.send(Object.keys(paths)),
   };
   // Find the first route that matches
   for (const [path, route] of Object.entries(paths)) {

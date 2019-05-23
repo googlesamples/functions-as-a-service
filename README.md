@@ -8,7 +8,7 @@ The demo shows calling Google Maps Platform APIs from Google Cloud Functions.
 
 - Cloud Functions (Node 10)
   - [Function Framework](https://github.com/GoogleCloudPlatform/functions-framework-nodejs) for local development.
-- [Node.js Client for Google Maps Services](https://github.com/googlemaps/google-maps-services-js)
+- Google Maps Services ([Node.js Client](https://github.com/googlemaps/google-maps-services-js))
   - Place Details API
   - Places Photos API
   - Call Routes API
