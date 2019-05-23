@@ -31,13 +31,21 @@ npm run build
 In another tab, start the web server (and watch if the source code changes):
 
 ```sh
-npm run watch
+API_KEY=<KEY> npm run watch
 ```
 
-In order to use some methods, you'll need to start the server with an API key.
+This uses [`npm-watch`](https://www.npmjs.com/package/npm-watch) with the [`functions-framework`](https://www.npmjs.com/package/@google-cloud/functions-framework) to auto re-build the server after changes.
 
-```sh
-API_KEY=<KEY> npm run watch
+### Test locally
+
+Go to `http://localhost:8080` to run your Google Cloud Function locally.
+
+Here are some example URL requests:
+
+```
+http://localhost:8080/directions?mode=driving&origin=37.7841393,-122.404467
+http://localhost:8080/origins?origin=6
+http://localhost:8080/places?origin=37.7841393,-122.114167
 ```
 
 ### API Key
@@ -51,19 +59,7 @@ More detailed instructions can be found in the ["Get API Key" guide](https://dev
 After creating an API key, enable these APIs:
 
 - [Directions API](http://console.cloud.google.com/google/maps-apis/apis/directions-backend.googleapis.com)
-
-### Test
-
-To run the tests, first create an API key with the `Places API` enabled:
-
-- Enable the `Places API`: https://console.cloud.google.com/google/maps-apis/apis/places-backend.googleapis.com
-- Create an `API Key`: https://console.cloud.google.com/apis/credentials
-
-Then run the tests from your terminal:
-
-```
-API_KEY=<KEY> npm run test
-```
+- [Places API](http://console.cloud.google.com/google/maps-apis/apis/places-backend.googleapis.com)
 
 ### Deploy
 
@@ -76,5 +72,6 @@ API_KEY=AIsdfyCnTEiLTroDN14NTtpPm1n7jrBR844ID4A
 You can deploy this project to Google Cloud Functions by running the following script:
 
 ```sh
-npm run deploy
+gcloud config set project $MY_PROJECT
+sh deploy.sh
 ```

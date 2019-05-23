@@ -22,5 +22,10 @@ exports.function = (req: Request, res: Response) => {
       return route(req, res);
     }
   }
+
+  // Allow CORS
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  
   res.send('No path found');
 };

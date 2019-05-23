@@ -1,0 +1,14 @@
+# Ignore git
+.git
+.gitignore
+
+# Ignore non-GCF files
+.gcloudignore
+*.ts
+node_modules
+.vscode
+*.md
+tsconfig.json
+tslint.json
+LICENSE
+*.sh
