@@ -2,7 +2,7 @@
   "compileOnSave": true,
   "declaration": true,
   "compilerOptions": {
-    "target": "es6",
+    "target": "es3", // mjs imports/modules aren't supported
     "lib": [
       "es2015",
       "es5",
@@ -10,6 +10,7 @@
       "es2017"
     ],
     "strict": true,
+    "allowSyntheticDefaultImports": true,
   },
   "moduleResolution": "node",
   "include": [

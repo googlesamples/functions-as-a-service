@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc --watch --declaration",
     "watch": "npm-watch local",
-    "local": "functions-framework --target=helloWorld",
+    "local": "functions-framework",
     "deploy": "cd gcf && npm run deploy",
     "test": "cd gmp && npm run test",
     "clean": "find . -name '*.js' -type f -delete"
