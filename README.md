@@ -63,7 +63,7 @@ After creating an API key, enable these APIs:
 
 ### Deploy
 
-You must create a `secret.env` with your API Key:
+You must create a `.env.yaml` with your API Key:
 
 ```env
 API_KEY=AIsdfyCnTEiLTroDN14NTtpPm1n7jrBR844ID4A
